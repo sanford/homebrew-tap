@@ -1,5 +1,5 @@
 class Lsmd < Formula
-  desc "Browse and read Markdown in the terminal, with source side by side"
+  desc "Markdown reader built for speed and easy navigation in large projects"
   homepage "https://github.com/sanford/lsmd"
   url "https://github.com/sanford/lsmd/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "43faf8c2188f271cc25b7b3a034d8fc1900dc496bfacc8eb547234e6e4085398"
