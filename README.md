@@ -10,4 +10,4 @@ brew install sanford/tap/lsmd
 | Formula | Description |
 |---|---|
 | [lsnet](https://github.com/sanford/lsnet) | Fast, zero-config LAN scanner that identifies what each device is |
-| [lsmd](https://github.com/sanford/lsmd) | Terminal Markdown reader for navigating large projects |
+| [lsmd](https://github.com/sanford/lsmd) | Terminal-friendly Markdown (.md) reader built for navigating large projects |
