@@ -1,8 +1,8 @@
 class Lsmd < Formula
   desc "Terminal-friendly Markdown (.md) reader built for navigating large projects"
   homepage "https://github.com/sanford/lsmd"
-  url "https://github.com/sanford/lsmd/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "43faf8c2188f271cc25b7b3a034d8fc1900dc496bfacc8eb547234e6e4085398"
+  url "https://github.com/sanford/lsmd/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "741a0a9c49b42749b5b17cf7ad7ab5e214beab2c9960eed232f9432123a64af7"
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lsmd.git", branch: "main"
 
