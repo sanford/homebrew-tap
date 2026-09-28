@@ -1,8 +1,8 @@
 class Lsnet < Formula
   desc "Fast, zero-config LAN scanner that identifies what each device is"
   homepage "https://github.com/sanford/lsnet"
-  url "https://github.com/sanford/lsnet/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "45547c62e3cb2c7aab4a76ec96ca8ce684c520f19a3ab8d23b78efe50c510355"
+  url "https://github.com/sanford/lsnet/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "225b2607da74b3ddab44ed4c0605cc8c5297e948aa486a7c561515b882b06be6"
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lsnet.git", branch: "main"
 
