@@ -1,8 +1,8 @@
 class Lsmd < Formula
   desc "Terminal-friendly Markdown (.md) reader built for navigating large projects"
   homepage "https://github.com/sanford/lsmd"
-  url "https://github.com/sanford/lsmd/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "b7a178e6a68c3d016f8514b54a7e5887f233c95c83a7c80e5085dd3de001d035"
+  url "https://github.com/sanford/lsmd/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "04cb06be40bd897dc74a2f04a316a88e905897a432936e8a545f34042e58abcd"
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lsmd.git", branch: "main"
 
@@ -10,6 +10,8 @@ class Lsmd < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"lsmd", "--completions")
+    (man1/"lsmd.1").write Utils.safe_popen_read(bin/"lsmd", "--man")
   end
 
   test do
@@ -18,5 +20,6 @@ class Lsmd < Formula
     output = shell_output("#{bin}/lsmd --plain #{testpath}/doc.md")
     assert_match "Hello", output
     assert_match "│ 1 │ 2 │", output
+    assert_match "--edit-config", shell_output("#{bin}/lsmd --completions zsh")
   end
 end
