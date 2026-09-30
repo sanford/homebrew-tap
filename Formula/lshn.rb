@@ -1,8 +1,8 @@
 class Lshn < Formula
   desc "Terminal Hacker News reader: stories, articles and comments on one screen"
   homepage "https://github.com/sanford/lshn"
-  url "https://github.com/sanford/lshn/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "28913b1d72fb8b20724812c716a435fa225fade3817da1605aabcac97bd61137"
+  url "https://github.com/sanford/lshn/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "97f34c7fd7c2fc8b3de0f1e4088a2957a98eb76d24038aaf6ea3c08aec71e305"
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lshn.git", branch: "main"
 
