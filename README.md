@@ -17,7 +17,8 @@ brew install sanford/tap/lshn
 ## Releasing
 
 Formulae ship with bottles (prebuilt binaries) for macOS on Apple silicon
-and Intel, and for Linux, so installing one doesn't build Rust from source.
+and for Linux, so installing one doesn't build Rust from source. Intel Macs
+build from source: Homebrew has no Intel bottles of Rust to build with.
 Bottles are made in pull requests, so a new version goes in through one:
 
 1. Open a pull request that bumps the formula. `brew bump-formula-pr`
@@ -41,7 +42,7 @@ Bottles are made in pull requests, so a new version goes in through one:
    gh workflow run publish.yml -R sanford/homebrew-tap -f pull_request=<number>
    ```
 
-To bottle a formula that hasn't changed, for example when adding a platform:
-open a pull request that touches it in any way (a comment will do), wait for
-the checks, then publish with `-f bottles_only=true`. That publishes just the
-bottles, without the throwaway change; close the pull request afterwards.
+To rebottle a formula that hasn't changed, for example when adding a
+platform: open a pull request that touches it (a comment will do), wait for
+the checks and publish it, then remove the comment in a commit straight to
+`main`. Publishing lands the pull request's commit along with the bottles.
