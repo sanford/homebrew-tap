@@ -1,3 +1,4 @@
+# Rebottle; discarded by publish.yml with bottles_only.
 class Lsmd < Formula
   desc "Terminal-friendly Markdown (.md) reader built for navigating large projects"
   homepage "https://github.com/sanford/lsmd"

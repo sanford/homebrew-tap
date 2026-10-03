@@ -1,3 +1,4 @@
+# Rebottle; discarded by publish.yml with bottles_only.
 class Lshn < Formula
   desc "Terminal Hacker News reader: stories, articles and comments on one screen"
   homepage "https://github.com/sanford/lshn"

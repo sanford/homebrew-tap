@@ -1,3 +1,4 @@
+# Rebottle; discarded by publish.yml with bottles_only.
 class Lsnet < Formula
   desc "Fast, zero-config LAN scanner that identifies what each device is"
   homepage "https://github.com/sanford/lsnet"
