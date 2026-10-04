@@ -1,26 +1,43 @@
 class Lsnet < Formula
   desc "Fast, zero-config LAN scanner that identifies what each device is"
   homepage "https://github.com/sanford/lsnet"
-  url "https://github.com/sanford/lsnet/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "225b2607da74b3ddab44ed4c0605cc8c5297e948aa486a7c561515b882b06be6"
+  url "https://github.com/sanford/lsnet/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "587dcea01c38f4a1a88b591aa0949710f513b15dca56fb086fb09637a3de3bf3"
   license "GPL-3.0-or-later"
-  head "https://github.com/sanford/lsnet.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/sanford/homebrew-tap/releases/download/lsnet-0.6.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a0901043720954e7436b55be0044107f7c767411561088502a2e418ab71bf03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32fedceea53012f7f915c56f6c055f1481b2c598f3110d9fbebfe188af8b5895"
-    sha256 cellar: :any,                 x86_64_linux:  "7c7cb6e2e84a89aaf5ffc58bb214e312e49d1d6a5c095993e77b6413e0aa147b"
+  head do
+    url "https://github.com/sanford/lsnet.git", branch: "main"
+    depends_on "rust" => :build
   end
 
-  depends_on "rust" => :build
+  # On Apple silicon, install the release's signed and notarized binary:
+  # macOS only shares the ARP table with signed programs, so it sees MAC
+  # addresses and silent devices without sudo.
+  on_macos do
+    on_arm do
+      url "https://github.com/sanford/lsnet/releases/download/v0.7.0/lsnet-macos-arm64.tar.gz"
+      sha256 "7ea72d6fe8514fb2c1d6eeb9a79afec988631c4a4c5483613dfb4bebb9c6eeb6"
+    end
+    on_intel do
+      depends_on "rust" => :build
+    end
+  end
+
+  on_linux do
+    depends_on "rust" => :build
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    if OS.mac? && Hardware::CPU.arm? && !build.head?
+      bin.install "lsnet"
+    else
+      system "cargo", "install", *std_cargo_args
+    end
   end
 
   def caveats
+    return if OS.mac? && Hardware::CPU.arm? && !build.head?
+
     <<~EOS
       lsnet works without root. To also see MAC addresses and vendors, and to
       find devices with no open ports, run it with sudo:
