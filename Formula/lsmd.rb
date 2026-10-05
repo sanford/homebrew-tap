@@ -1,17 +1,10 @@
 class Lsmd < Formula
   desc "Terminal-friendly Markdown (.md) reader built for navigating large projects"
   homepage "https://github.com/sanford/lsmd"
-  url "https://github.com/sanford/lsmd/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "137c1b49d22581f305f67f98e2fd49931a789bb8f08484b9ba90812b51930c72"
+  url "https://github.com/sanford/lsmd/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "d1604dcd9ac218a1e25cd246f861e1f9ac64b966e887e9baf4d14addf340a5a9"
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lsmd.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/sanford/homebrew-tap/releases/download/lsmd-0.8.4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c59bbae0baa4c1efbb26e44fd5aaca124504b1598dae117a8a2078b66ecb8d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "667f6056b855c68657283e2d2ab9cc4fdd4792110fe9a567c2e1ae2a99edbc1f"
-    sha256 cellar: :any,                 x86_64_linux:  "be8de3266e2a69103164dab99ef3584607edd0cad14f23665bd72adb0d5c9665"
-  end
 
   depends_on "rust" => :build
 
