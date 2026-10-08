@@ -6,13 +6,6 @@ class Lsmd < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lsmd.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/sanford/homebrew-tap/releases/download/lsmd-0.9.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd92fffa242c499208c7f4bfa11a6948718a8a931a704411ec178cf89051dfb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b07a6a49ef6102029ddb561a47518b560fdc9897e1f49cd2f30f163f4d48c0c9"
-    sha256 cellar: :any,                 x86_64_linux:  "199c01358ead40a203aa3243ab3cdf49453801e4f2130a3b4bb1fb2ccf751015"
-  end
-
   depends_on "rust" => :build
 
   def install
