@@ -1,16 +1,9 @@
 class Lsnet < Formula
   desc "Fast, zero-config LAN scanner that identifies what each device is"
   homepage "https://github.com/sanford/lsnet"
-  url "https://github.com/sanford/lsnet/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "a7d3284ceb59f9494c80607f42922b3d8af456d4e342dd40cf106c02567c96a1"
+  url "https://github.com/sanford/lsnet/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "70608f5377515ff7e86809993a1b04d3909dd6fbaadf2ac3a1e583f9877394e1"
   license "GPL-3.0-or-later"
-
-  bottle do
-    root_url "https://github.com/sanford/homebrew-tap/releases/download/lsnet-0.9.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c4c389a43b383880d8de0f0e86abb831c470ebe48dd1a9f3ca285a82b4bac39"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c565be1d01b01d4326c49ba9c3f4e92d8847889dd47988a84d389bbe647fd26"
-    sha256 cellar: :any,                 x86_64_linux:  "5342efdc8d2c313371423664eabdd4386d7c34c6f1225be7d9591bbb6cfb5a29"
-  end
 
   head do
     url "https://github.com/sanford/lsnet.git", branch: "main"
@@ -22,8 +15,8 @@ class Lsnet < Formula
   # addresses and silent devices without sudo.
   on_macos do
     on_arm do
-      url "https://github.com/sanford/lsnet/releases/download/v0.9.0/lsnet-macos-arm64.tar.gz"
-      sha256 "f44c41676018a0a090cfd7b82fcee556f1487f22dc4b4950e8d192e81c4ddd6b"
+      url "https://github.com/sanford/lsnet/releases/download/v0.10.0/lsnet-macos-arm64.tar.gz"
+      sha256 "ca3effcceb1ed02c11c0c3d7de5225c32c9b00859b3ad7ffa0c349d3321c4df0"
     end
     on_intel do
       depends_on "rust" => :build
