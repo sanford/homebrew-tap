@@ -6,6 +6,13 @@ class Lshn < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/sanford/lshn.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/sanford/homebrew-tap/releases/download/lshn-0.6.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22195fd0226163ec93dbc5922e21ef21d8a964a0a2c49981d92ca54812f43653"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ff553f24fd508c50e16627d05b17a7526673e5f5a9f0da4b35819ddd21d08c5"
+    sha256 cellar: :any,                 x86_64_linux:  "8d0880604a225639890c77d3e828d8b122612ff7cae7ef539d3700d1ea01f224"
+  end
+
   depends_on "rust" => :build
 
   def install
