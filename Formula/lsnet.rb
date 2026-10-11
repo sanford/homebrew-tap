@@ -5,6 +5,13 @@ class Lsnet < Formula
   sha256 "ff1e9f6f2ce1fda8b3b9a20feee05cff589f761ca03ea9101e682dcef9e41523"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/sanford/homebrew-tap/releases/download/lsnet-0.14.1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "737e63ba392f391d7b15b431e9993ecc4355d8005ab81d3a5f9e1d2194c531fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a000cf0d47c6f9dc07d697fa699faa2c71b8cbc8c99e8122abba6e02922412c1"
+    sha256 cellar: :any,                 x86_64_linux:  "7b7649742bbd631a18a4357b79b322cddd299698bf53b61e070d2bfe8d748713"
+  end
+
   head do
     url "https://github.com/sanford/lsnet.git", branch: "main"
     depends_on "rust" => :build
